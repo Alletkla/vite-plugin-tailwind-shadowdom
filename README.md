@@ -83,4 +83,4 @@ This plugin is useful when:
 
 ## License
 
-MIT © [alletkla](https://github.com/alletkla)
+MIT © [Maximilian Förster](https://github.com/Alletkla)

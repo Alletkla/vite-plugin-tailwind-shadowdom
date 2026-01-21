@@ -1,47 +1,51 @@
 {
-    "name": "vite-plugin-tailwind-shadowdom",
-    "version": "1.0.0",
-    "description": "Vite plugin to normalize Tailwind CSS for Shadow DOM usage",
-    "type": "module",
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "default": "./dist/index.js"
-        }
-    },
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "build": "tsc",
-        "prepublishOnly": "npm run build"
-    },
-    "keywords": [
-        "vite",
-        "vite-plugin",
-        "tailwind",
-        "tailwindcss",
-        "shadow-dom",
-        "web-components",
-        "css"
-    ],
-    "author": "alletkla",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/alletkla/vite-plugin-tailwind-shadowdom.git"
-    },
-    "bugs": {
-        "url": "https://github.com/alletkla/vite-plugin-tailwind-shadowdom/issues"
-    },
-    "homepage": "https://github.com/alletkla/vite-plugin-tailwind-shadowdom#readme",
-    "peerDependencies": {
-        "vite": ">=4.0.0"
-    },
-    "devDependencies": {
-        "typescript": "^5.0.0",
-        "vite": "^6.0.0"
+  "name": "vite-plugin-tailwind-shadowdom",
+  "version": "1.0.0",
+  "description": "Vite plugin to normalize Tailwind CSS for Shadow DOM usage",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "tailwind",
+    "tailwindcss",
+    "shadow-dom",
+    "web-components",
+    "css"
+  ],
+  "author": "Maximilian Förster <https://github.com/Alletkla>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alletkla/vite-plugin-tailwind-shadowdom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alletkla/vite-plugin-tailwind-shadowdom/issues"
+  },
+  "homepage": "https://github.com/Alletkla/vite-plugin-tailwind-shadowdom#readme",
+  "peerDependencies": {
+    "vite": ">=4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0"
+  }
 }
