@@ -35,10 +35,10 @@ export default defineConfig({
 
 ## What It Does
 
-This plugin runs **after** Tailwind processes your CSS and:
+This plugin runs **after** Tailwind processes your CSS. It only transforms CSS that is imported with a query (e.g. `?inline`), which is the typical pattern for injecting styles into Shadow DOM.
 
-1. **Converts `:root` to `:host`** - Ensures CSS custom properties work within Shadow DOM
-2. **Removes problematic `@supports` conditions** - Strips `-webkit-hyphens: none` conditions that break in Shadow DOM
+1. **Unwraps problematic `@supports` blocks** – For any `@supports` that mentions `-webkit-hyphens`, the plugin removes the wrapper and keeps only the rules inside, so they always apply. That avoids the condition failing in Shadow DOM and blocking those styles.
+2. **Converts `:root` to `:host`** – Ensures CSS custom properties and root-level styles apply to the Shadow DOM host.
 
 ### Before
 
@@ -61,10 +61,8 @@ This plugin runs **after** Tailwind processes your CSS and:
   --color-primary: #3b82f6;
 }
 
-@supports (not (margin-trim: inline)) {
-  .truncate {
-    text-overflow: ellipsis;
-  }
+.truncate {
+  text-overflow: ellipsis;
 }
 ```
 
@@ -74,7 +72,9 @@ This plugin is useful when:
 
 - Building web components with Shadow DOM
 - Embedding widgets/microfrontends that use Shadow DOM isolation
-- Using Tailwind CSS with `?inline` CSS imports for Shadow DOM injection
+- Using Tailwind CSS with `?inline` (or other query) CSS imports for Shadow DOM injection
+
+**Note:** The plugin only transforms CSS modules that are requested with a query (e.g. `import styles from './styles.css?inline'`). Regular CSS in your app is left unchanged.
 
 ## Compatibility
 
